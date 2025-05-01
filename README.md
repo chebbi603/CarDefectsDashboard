@@ -44,6 +44,10 @@ npm install
 ```bash
 npm run dev
 ```
+In case the backend server is not running
+```bash
+npm server.js
+```
 
 ## Project Structure
 
