@@ -1,6 +1,6 @@
 import { IconBell } from "@tabler/icons-react";
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 
 export default function Alerts() {
   const navigate = useNavigate();
@@ -35,18 +35,30 @@ export default function Alerts() {
       {displayData.map((item, index) => {
         return (
           <div className="relative w-full h-fit flex flex-col" key={index}>
-            {item.map((subItem, subIndex) => (
-              <div
-                key={subIndex}
-                className="bg-slate-100 p-4 rounded-md cursor-pointer hover:bg-slate-200 transition-colors duration-200"
-                onClick={() => {
-                  navigate(subItem.url);
-                }}
-              >
-                <p className="font-medium text-lg">{subItem.title}</p>
-                <p className="text-sm">Date: {subItem.date}</p>
-              </div>
-            ))}
+            {Array.isArray(item) ? (
+              item.map((subItem, subIndex) => (
+                <div
+                  key={subIndex}
+                  className="bg-slate-100 p-4 rounded-md cursor-pointer hover:bg-cyan-200"
+                  onClick={() => {
+                    navigate(subItem.url);
+                  }}
+                >
+                  <p className="font-medium text-lg">{subItem.title}</p>
+                  <p className="text-sm">Date: {subItem.date}</p>
+                  <p className="text-sm">
+                    Resolution: {subItem.avgResolution} hours
+                  </p>
+                </div>
+              ))
+            ) : (
+              <>
+                <p className="font-medium text-lg">{item.date}</p>
+                <p className="text-sm">
+                  Resolution: {item.avgResolution} hours
+                </p>
+              </>
+            )}
           </div>
         );
       })}
