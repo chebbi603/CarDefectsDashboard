@@ -11,8 +11,56 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // In-memory data stores
-let cases = [];
-let alerts = [];
+let cases = [
+  {
+    title: "Problem with wires",
+    message:
+      "I have noticed this defect with a high severity rating. Please help.",
+    type: "Anomaly",
+    status: "Under review",
+    date: "2025-05-01T19:21:45.995Z",
+    messsages: [],
+    data: [
+      {
+        id: 1,
+        Date: "23.06.23",
+        Time: "12:00:00",
+        "Defect Name": "Loose Wiring",
+        Station: "Tire And Rim Installation",
+        "Part of the Car": "Door Panel",
+        "Reporter Name": "Chris Lee",
+        "Part Number": 875001,
+        "Severity Rating": 10,
+        "Car Model": "Base",
+        "Motor Type": "Long Range",
+        "Design Package": "Offroad",
+        "Production Shift": "Morning",
+        "Resolution Time (in hours)": 8,
+        "Root Cause Identified": "Yes",
+        "Defect Category": "Cosmetic",
+      },
+    ],
+    id: "1746127305998",
+    messages: [
+      {
+        text: "Case created",
+        sender: "SYSTEM",
+        timestamp: "2025-05-01T19:21:45.998Z",
+      },
+    ],
+  },
+];
+
+let alerts = [
+  [
+    {
+      id: 2,
+      title: "Average Resolution time: Out of Control Points Detected",
+      date: "26.05.23",
+      url: "/dashboard/analysis",
+    },
+  ],
+];
 
 app.post("/add-case", (req, res) => {
   const caseData = req.body;

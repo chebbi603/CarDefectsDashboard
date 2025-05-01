@@ -11,6 +11,7 @@ import Alerts from "./pages/Dashboard/SubPages/Alerts";
 import Cases from "./pages/Cases/Cases";
 import CaseView from "./pages/Cases/CaseView";
 import CaseContainer from "./pages/Cases/CaseContainer";
+import Home from "./pages/Home";
 
 function App() {
   const [data, setData] = useState([]);
@@ -329,7 +330,7 @@ function App() {
           }
         >
           <Route index element={<Navigate to="home" />} />
-          <Route path="home" element={<h1>Home</h1>} />
+          <Route path="home" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />}>
             <Route
               index

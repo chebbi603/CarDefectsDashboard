@@ -50,8 +50,6 @@ export default function CaseView() {
     return () => controller.abort();
   }, [caseid]);
 
-  console.log(displayData);
-
   const handleSendMessage = () => {
     if (!newMessage.trim()) return;
 

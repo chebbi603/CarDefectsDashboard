@@ -3,6 +3,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Box } from "@mui/material";
+import { calculateQualityScore } from "../../utils/qualityMetrics";
 export default function Cases() {
   const navigate = useNavigate();
   const [casesData, setCasesData] = useState([]);
@@ -56,8 +57,13 @@ export default function Cases() {
               key={index}
               className="flex flex-col gap-3 bg-white shadow-sm border border-slate-200 p-4 hover:shadow-lg transition-shadow duration-200"
             >
-              <div className="p-1 pl-2 pr-2 bg-slate-200 text-xs rounded-md w-fit">
-                <p>{item.status?.toUpperCase()}</p>
+              <div className="flex justify-between items-start">
+                <div className="p-1 pl-2 pr-2 bg-slate-200 text-xs rounded-md w-fit">
+                  <p>{item.status?.toUpperCase()}</p>
+                </div>
+                <div className={`${calculateQualityScore(item).indicator} text-xs px-2 py-1 rounded-md`}>
+                  {calculateQualityScore(item).importance}
+                </div>
               </div>
               <div>
                 <h3 className="font-medium m-0 text-cyan-700 text-lg">

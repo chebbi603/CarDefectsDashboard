@@ -180,8 +180,7 @@ const LeftPanel = ({ itemData, axisData, closeLeftBar, rowData }) => {
             Select case type
           </option>
           <option value="option1">Anomaly</option>
-          <option value="option2">Option 2</option>
-          <option value="option3">Option 3</option>
+          <option value="option2">Invalid Data</option>
         </select>
         <textarea
           className="case-input-message w-full text-left align-top"
