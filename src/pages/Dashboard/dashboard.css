@@ -1,0 +1,22 @@
+@import "tailwindcss";
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.box {
+  height: 100%;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.header-headline {
+  color: theme("colors.cyan.700");
+}

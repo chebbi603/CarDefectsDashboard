@@ -1,0 +1,14 @@
+@import "tailwindcss";
+.icon-button {
+  padding: 8px;
+  width: min-content;
+  border-radius: 8;
+  transition: background-color 0.2s ease-in-out;
+  cursor: pointer;
+}
+.icon-button:hover {
+  background-color: theme("colors.slate.200");
+}
+.icon-button:active {
+  background-color: theme("colors.slate.300");
+}

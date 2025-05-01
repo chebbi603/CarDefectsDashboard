@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+.tabs-container {
+  background-color: theme("colors.slate.100");
+  padding: 6px;
+  width: fit-content;
+}
+
+.tabs-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.tab-item {
+  padding: 10px 16px;
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+  font-family: "Figtree";
+  font-weight: 600;
+  color: theme("colors.slate.700");
+  border: 1px solid theme("colors.slate.100");
+  transition: all 0.2s ease;
+}
+
+.tab-item:hover {
+  background-color: theme("colors.slate.200");
+}
+
+.tab-item.active {
+  background-color: white;
+  border: 1px solid theme("colors.slate.200");
+  color: theme("colors.cyan.700");
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}

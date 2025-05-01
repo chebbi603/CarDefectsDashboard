@@ -1,0 +1,18 @@
+@import "tailwindcss";
+.table-page {
+  width: 100%;
+}
+
+.search-input {
+  border: 1px solid theme("color.slate.300");
+  font-size: 16px;
+  padding: 12px;
+  outline: none;
+  transition: border 0.3s;
+  border-radius: 0;
+  max-height: 200px;
+}
+.search-input:focus,
+.search-input:focus {
+  border: 1px solid theme("color.cyan.500");
+}
